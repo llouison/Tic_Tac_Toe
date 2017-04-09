@@ -1,4 +1,4 @@
-console.log('connected!');
+console.log('let\'s play!');
 
 
 function startGame(){
@@ -34,14 +34,11 @@ function startGame(){
                 whichDiv[i].innerHTML = 'x';
                 whoWon();
             }
-            if(turn = 9){
-                myBanner.innerHTML = 'draw';
-            }
             //removing the event listener once the h2 is clicked
             whichDiv[i].removeEventListener('click', enterPlay);
 
             function whoWon(){
-                console.log('checking for winner');
+                // console.log('checking for winner');
                 //locating each individual top h2
                 const topleft = document.getElementById('top-left').innerHTML;
                 const topmiddle = document.getElementById('top-middle').innerHTML;
@@ -57,34 +54,34 @@ function startGame(){
 
                 //creating if statements that check for the possible win situations and change the banner. You have to state that they don't equal the '…' or it will include that as a win
 
-                //top horizontal win
+                // top horizontal win
                 if(topleft === topmiddle && topmiddle === topright && topleft !== '…'){
                      myBanner.innerHTML = `${topleft} wins!`;
                 } //center horizontal win
-                if(centerleft === centermiddle && centermiddle === centerright && centerleft !== '…'){
+                else if(centerleft === centermiddle && centermiddle === centerright && centerleft !== '…'){
                      myBanner.innerHTML = `${centerleft} wins!`;
                 } //bottom horizontal win
-                if(bottomleft === bottommiddle && bottommiddle === bottomright && bottomleft !== '…'){
+                else if(bottomleft === bottommiddle && bottommiddle === bottomright && bottomleft !== '…'){
                      myBanner.innerHTML = `${bottomleft} wins!`;
                 } //left vertical win
-                if(topleft === centerleft && centerleft === bottomleft && topleft !== '…'){
+                else if(topleft === centerleft && centerleft === bottomleft && topleft !== '…'){
                      myBanner.innerHTML = `${bottomleft} wins!`;
                 } //center vertical win
-                if(topmiddle === centermiddle && centermiddle === bottommiddle && topmiddle !== '…'){
+                else if(topmiddle === centermiddle && centermiddle === bottommiddle && topmiddle !== '…'){
                      myBanner.innerHTML = `${bottommiddle} wins!`;
                 } //right vertical win
-                if(topright === centerright && centerright === bottomright && topright !== '…'){
+                else if(topright === centerright && centerright === bottomright && topright !== '…'){
                      myBanner.innerHTML = `${bottomright} wins!`;
                 } //left diagonal win
-                if(topleft === centermiddle && centermiddle === bottomright && topleft !== '…'){
+                else if(topleft === centermiddle && centermiddle === bottomright && topleft !== '…'){
                      myBanner.innerHTML = `${topleft} wins!`;
                 } //right diagonal win
-                if(topright === centermiddle && centermiddle === bottomleft && topright !== '…'){
+                else if(topright === centermiddle && centermiddle === bottomleft && topright !== '…'){
                      myBanner.innerHTML = `${topright} wins!`;
                 } 
-                // else {
-                //     myBanner.innerHTML = 'draw';
-                // }
+                else if (turn === 9){
+                    myBanner.innerHTML = 'draw';
+                } 
             }//end of whoWon function
         } //end of enterplay function
     } //end of for loop
