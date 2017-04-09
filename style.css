@@ -66,6 +66,7 @@ h2 {
 #restart:hover {
     background: #fa8a5a;
     transition: 0.5s;
+    cursor: pointer;
 }
 footer {
     bottom: 50px;
