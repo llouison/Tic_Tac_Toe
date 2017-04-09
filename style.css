@@ -10,6 +10,31 @@ h1 {
     text-align: center;
     margin: 2vh 0;
 }
+/* text animation found at http://codepen.io/zenadesign/pen/GqGgqx*/
+.appear {
+	transform-origin:center top;
+	animation:show 0.5s both;
+}
+span.appear {display:inline-block;}
+.p1 {animation-delay:0.5s;}
+.p2 {animation-delay:1.5s;}
+.p3 {animation-delay:2s;}
+@keyframes show {
+	0% {
+		transform:translate(0,2em);
+		opacity:0;
+		text-shadow:0 0 0 #fafafa;
+	}
+	50% {
+		text-shadow:0 0 0.5em #606060;
+	}
+	100% {
+		transform:translate(0,0);
+		opacity:1;
+		text-shadow:none;
+	}
+}
+
 h2 {
     color: #f26419;
     font-family: 'Indie Flower', cursive;
