@@ -5,4 +5,36 @@ body {
 }
 h1 {
     font-family: 'Indie Flower', cursive;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+}
+#gameboard {
+    display: block;
+    width: 70vw;
+    height: 70vw;
+    margin: 5vh auto 0;
+}
+.container {
+    text-align: center;
+}
+.box {
+    height: 22vh;
+    width: 22vh;
+    background: #fafafa;
+    border-radius: 10px;
+    margin: 5px;
+    display: inline-block;
+}
+.box:hover{
+    background: #f6ae2d;
+    transition: 0.5s;
+}
+footer {
+    bottom: 50px;
+    text-align: center;
+    color: #fff;
+}
+footer a {
+    color: #fff;
 }
