@@ -2,11 +2,14 @@ console.log('connected!');
 
 
 function startGame(){
-    //creating a variable to locate all the h2s
+    //creating a variable to locate all the h2s and the banner
     const whichDiv = document.querySelectorAll('.turn');
     const myBanner = document.getElementById('banner');
-    let turn = 0;
+    //setting the banner's innterhtml to indicate first player
     myBanner.innerHTML = 'x\'s turn';
+    let turn = 0;
+    
+
     //creating a for loop to loop through the h2s
     for (let i = 0; i < whichDiv.length; i++) { 
         //adding an eventlistener to each h2 that executes the enterplay function when clicked
@@ -22,15 +25,67 @@ function startGame(){
             if(turn % 2 === 0){  
                 myBanner.innerHTML = 'x\'s turn';
                 whichDiv[i].innerHTML = 'o';
+                whoWon();
             }
             //if the turn is odd, the else statement changes the h2s innerhtml to 'o' 
             //and changes the banner to the next player's turn
             else {
                 myBanner.innerHTML = 'o\'s turn';
                 whichDiv[i].innerHTML = 'x';
+                whoWon();
+            }
+            if(turn = 9){
+                myBanner.innerHTML = 'draw';
             }
             //removing the event listener once the h2 is clicked
             whichDiv[i].removeEventListener('click', enterPlay);
+
+            function whoWon(){
+                console.log('checking for winner');
+                //locating each individual top h2
+                const topleft = document.getElementById('top-left').innerHTML;
+                const topmiddle = document.getElementById('top-middle').innerHTML;
+                const topright = document.getElementById('top-right').innerHTML;
+                //locating each individual center h2
+                const centerleft = document.getElementById('center-left').innerHTML;
+                const centermiddle = document.getElementById('center-middle').innerHTML;
+                const centerright = document.getElementById('center-right').innerHTML;
+                //locating each individual bottom h2
+                const bottomleft = document.getElementById('bottom-left').innerHTML;
+                const bottommiddle = document.getElementById('bottom-middle').innerHTML;
+                const bottomright = document.getElementById('bottom-right').innerHTML;
+
+                //creating if statements that check for the possible win situations and change the banner. You have to state that they don't equal the '…' or it will include that as a win
+
+                //top horizontal win
+                if(topleft === topmiddle && topmiddle === topright && topleft !== '…'){
+                     myBanner.innerHTML = `${topleft} wins!`;
+                } //center horizontal win
+                if(centerleft === centermiddle && centermiddle === centerright && centerleft !== '…'){
+                     myBanner.innerHTML = `${centerleft} wins!`;
+                } //bottom horizontal win
+                if(bottomleft === bottommiddle && bottommiddle === bottomright && bottomleft !== '…'){
+                     myBanner.innerHTML = `${bottomleft} wins!`;
+                } //left vertical win
+                if(topleft === centerleft && centerleft === bottomleft && topleft !== '…'){
+                     myBanner.innerHTML = `${bottomleft} wins!`;
+                } //center vertical win
+                if(topmiddle === centermiddle && centermiddle === bottommiddle && topmiddle !== '…'){
+                     myBanner.innerHTML = `${bottommiddle} wins!`;
+                } //right vertical win
+                if(topright === centerright && centerright === bottomright && topright !== '…'){
+                     myBanner.innerHTML = `${bottomright} wins!`;
+                } //left diagonal win
+                if(topleft === centermiddle && centermiddle === bottomright && topleft !== '…'){
+                     myBanner.innerHTML = `${topleft} wins!`;
+                } //right diagonal win
+                if(topright === centermiddle && centermiddle === bottomleft && topright !== '…'){
+                     myBanner.innerHTML = `${topright} wins!`;
+                } 
+                // else {
+                //     myBanner.innerHTML = 'draw';
+                // }
+            }//end of whoWon function
         } //end of enterplay function
     } //end of for loop
 } //end of startGame function   
