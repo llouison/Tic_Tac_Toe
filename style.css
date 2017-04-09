@@ -5,29 +5,66 @@ body {
 }
 h1 {
     font-family: 'Indie Flower', cursive;
-    font-size: 60px;
+    font-size: 10vw;
     color: #fff;
     text-align: center;
+    margin: 2vh 0;
+}
+h2 {
+    color: #f26419;
+    font-family: 'Indie Flower', cursive;
+    font-size: 18vw;
+    max-width: 200px;
+    margin: auto;
 }
 #gameboard {
     display: block;
-    width: 70vw;
-    height: 70vw;
-    margin: 5vh auto 0;
+    width: 80vw;
+    margin: 1vh auto 0;
+}
+#banner {
+    box-sizing: border-box;
+    height: 3vw;
+    color: #fff;
+    font-size: 3vw;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
 }
 .container {
     text-align: center;
 }
 .box {
-    height: 22vh;
-    width: 22vh;
+    height: 22vw;
+    width: 22vw;
+    max-height: 200px;
+    max-width: 200px;
     background: #fafafa;
     border-radius: 10px;
     margin: 5px;
+    box-sizing: border-box;
     display: inline-block;
+    vertical-align: top;
 }
 .box:hover{
     background: #f6ae2d;
+    transition: 0.3s ease;
+}
+#restart {
+    background: #f26419;
+    box-sizing: border-box;
+    height: 6vw;
+    width: 22vw;
+    color: #fff;
+    font-size: 3vw;
+    text-align: center;
+    padding: 1.5vw 0;
+    border-radius: 10px;
+    margin: 5vh auto;
+    display: block;
+}
+#restart:hover {
+    background: #fa8a5a;
     transition: 0.5s;
 }
 footer {
