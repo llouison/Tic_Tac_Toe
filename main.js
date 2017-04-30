@@ -58,27 +58,35 @@ function startGame(){
                 top horizontal win*/
                 if(topLeft === topMiddle && topMiddle === topRight && topLeft !== '…'){
                      myBanner.innerHTML = `${topLeft} wins!`;
+                     myBanner.style.color = '#f26419';
                 } // center horizontal win
                 else if(centerLeft === centerMiddle && centerMiddle === centerRight && centerLeft !== '…'){
                      myBanner.innerHTML = `${centerLeft} wins!`;
+                     myBanner.style.color = '#f26419';
                 } // bottom horizontal win
                 else if(bottomLeft === bottomMiddle && bottomMiddle === bottomRight && bottomLeft !== '…'){
                      myBanner.innerHTML = `${bottomLeft} wins!`;
+                     myBanner.style.color = '#f26419';
                 } // left vertical win
                 else if(topLeft === centerLeft && centerLeft === bottomLeft && topLeft !== '…'){
                      myBanner.innerHTML = `${bottomLeft} wins!`;
+                     myBanner.style.color = '#f26419';
                 } // center vertical win
                 else if(topMiddle === centerMiddle && centerMiddle === bottomMiddle && topMiddle !== '…'){
                      myBanner.innerHTML = `${bottomMiddle} wins!`;
+                     myBanner.style.color = '#f26419';
                 } // right vertical win
                 else if(topRight === centerRight && centerRight === bottomRight && topRight !== '…'){
                      myBanner.innerHTML = `${bottomRight} wins!`;
+                     myBanner.style.color = '#f26419';
                 } // left diagonal win
                 else if(topLeft === centerMiddle && centerMiddle === bottomRight && topLeft !== '…'){
                      myBanner.innerHTML = `${topLeft} wins!`;
+                     myBanner.style.color = '#f26419';
                 } // right diagonal win
                 else if(topRight === centerMiddle && centerMiddle === bottomLeft && topRight !== '…'){
                      myBanner.innerHTML = `${topRight} wins!`;
+                     myBanner.style.color = '#f26419';
                 } 
                 else if (turn === 9){
                     myBanner.innerHTML = 'draw';
@@ -96,6 +104,7 @@ const gameRestart = function (){
     const allDivs = document.querySelectorAll('.turn');
     const myBanner = document.getElementById('banner');
     myBanner.innerHTML = 'x\'s turn';
+    myBanner.style.color = '#fff';
     startGame();
 }
 
